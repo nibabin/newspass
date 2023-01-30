@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import LabeledInput from "../components/design/Input"
-import firebase from "../firebaseConfig"
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function LoginScreen() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [submitted, setSubmitted] = useState(false);
 
-    console.log(email);
-    console.log(password);
+    let navigate = useNavigate();
 
-    const authenticate = async () => {
-        const auth = getAuth();
+    const authenticate = async (e : any) => {
+        e.preventDefault();
         try {
-            const res = await createUserWithEmailAndPassword(auth, email, password)
+            const auth = getAuth();
+            const res = await signInWithEmailAndPassword(auth, email, password)
+            setSubmitted(true);
             console.log(res.user);
+            navigate("/feed")
         } catch (err) {
             console.log(err);
         }
@@ -24,7 +27,7 @@ export default function LoginScreen() {
     return (
         <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
+                <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" />
                 <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">NewsPass</h2>
             </div>
 
