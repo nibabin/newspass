@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import ReactDOM from "react-dom";
 import {
     BrowserRouter,
+    HashRouter,
     Route,
     Routes
 } from "react-router-dom"
@@ -18,14 +19,14 @@ export const Router = () => {
 
     return (
         <Context.Provider value={{ payWallPass, setPayWallPass }}>
-            <BrowserRouter>
+            <HashRouter>
                 <Routes>
                     <Route path='/' element={<LoginScreen />} />
                     <Route path='/feed' element={<HomeScreen />} />
                     <Route path='/nytLogin/article1' element={<NYTLoginScreen article={article1} />} />
                     <Route path='/nytLogin/article2' element={<NYTLoginScreen article={article2} />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </Context.Provider>
     )
 }   
