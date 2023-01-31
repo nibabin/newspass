@@ -5,7 +5,7 @@ import { Article, articles } from '../articles/Articles';
 import { NewsArticle } from '../components/design/NewsArticle';
 
 
-export default function HomeScreen() {
+export default function VideoScreen() {
     const navigate = useNavigate();
 
     return (
@@ -32,18 +32,16 @@ export default function HomeScreen() {
 
             </div>
 
-            {articles.map(article => <NewsArticle article={article} />)}
-
             <div className="w-full h-12 bg-gray-300 fixed left-0 bottom-0 flex justify-around items-center text-white text-2xl">
-                <div className="ml-1 w-15 h-15 round bg-gray-100 font-black" onClick={() => navigate('/videoScreen')}>
-                    <svg className="stroke-neutral-800 w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" >
+                <div className="ml-1 w-15 h-15 round bg-blue-100 font-black">
+                    <svg className="stroke-blue-800 w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" >
                         <path strokeLinecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
                     </svg>
 
                 </div>
 
-                <div className="ml-1 w-15 h-15 round bg-blue-100 font-black">
-                    <svg className="stroke-blue-800 w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <div className="ml-1 w-15 h-15 round bg-gray-100 font-black" onClick={() => navigate('/feed')}>
+                    <svg className="stroke-neutral-800 w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
                     </svg>
 

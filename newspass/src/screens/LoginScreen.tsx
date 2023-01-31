@@ -37,17 +37,6 @@ export default function LoginScreen() {
                         <LabeledInput value={email} onChange={(e) => setEmail(e.target.value)} labelName="Email Address" id="email" name="email" type="email" />
                         <LabeledInput value={password} onChange={(e) => setPassword(e.target.value)} labelName="Password " id="password" name="password" type="password" />
 
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center">
-                                <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-                                <label className="ml-2 block text-sm text-gray-900">Remember me</label>
-                            </div>
-
-                            <div className="text-sm">
-                                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">Forgot your password?</a>
-                            </div>
-                        </div>
-
                         <div>
                             <button onClick={authenticate} type="submit" className="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Sign in</button>
                         </div>

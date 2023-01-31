@@ -9,8 +9,9 @@ import {
 import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import NYTLoginScreen from "../screens/NYTLoginScreen";
-import { article1, article2 } from '../articles/Articles';
 import { Context } from "../context";
+import VideoScreen from "../screens/VideoScreen";
+import PodcastScreen from "../screens/PodcastScreen";
 
 
 
@@ -23,8 +24,9 @@ export const Router = () => {
                 <Routes>
                     <Route path='/' element={<LoginScreen />} />
                     <Route path='/feed' element={<HomeScreen />} />
-                    <Route path='/nytLogin/article1' element={<NYTLoginScreen article={article1} />} />
-                    <Route path='/nytLogin/article2' element={<NYTLoginScreen article={article2} />} />
+                    <Route path='/nytLogin/' element={<NYTLoginScreen />} />
+                    <Route path='/videoScreen' element={<VideoScreen />} />
+                    <Route path='/podcastScreen' element={<PodcastScreen />} />
                 </Routes>
             </HashRouter>
         </Context.Provider>
