@@ -32,7 +32,7 @@ export default function HomeScreen() {
 
             </div>
 
-            {articles.map(article => <NewsArticle article={article} />)}
+            {articles.map((article, idx) => <NewsArticle article={article} key={idx} />)}
 
             <div className="w-full h-12 bg-gray-300 fixed left-0 bottom-0 flex justify-around items-center text-white text-2xl">
                 <div className="ml-1 w-15 h-15 round bg-gray-100 font-black" onClick={() => navigate('/videoScreen')}>

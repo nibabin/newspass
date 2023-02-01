@@ -19,6 +19,7 @@ export default function NYTLoginScreen() {
     const authenticate = async (e: any) => {
         e.preventDefault();
         setPayWallPass(true);
+        localStorage.setItem('payWallPass', 'true')
     }
 
     return (
